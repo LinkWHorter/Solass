@@ -1,0 +1,115 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	overflow: hidden;
+}
+
+.cont {
+	font-size: 0.5em;
+	width: 40em;
+	height: 40em;
+	position: relative;
+}
+
+.sun p {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	text-align: center;
+	margin-top: 3.95em;
+	margin-left: 3px;
+	animation: caboom 3.2s linear infinite;
+}
+
+.sun a {
+	color: orange;
+	text-decoration: none;
+	z-index: 3;
+}
+
+.sun {
+	position: relative;
+	top: 15em;
+	left: 15em;
+	width: 10em;
+	height: 10em;
+	background-color: gold;
+	border-radius: 50%;
+	box-shadow: 0 0 3em yellow;
+	border: solid 3px orange;
+}
+
+.earth {
+	position: absolute;
+	top: 5em;
+	left: 5em;
+	width: 30em;
+	height: 30em;
+	animation: orbit 36.5s linear infinite;
+}
+
+.moon, .moona {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 8em;
+	height: 8em;
+	animation: orbit 2.7s linear infinite;
+}
+
+.moona {
+	margin-top: 15em;
+	margin-left: 125em;
+	font-size: 0.2em;
+	font-family: "Comic Sans MS", "Comic Sans";
+	text-align: center;
+	animation: orbit 0.8s linear infinite;
+}
+
+.earth, .moon {
+	position: absolute;
+	border-style: solid;
+	border-color: white transperent transperent transperent;
+	border-width: 0.1em 0.1em 0 0;
+	border-radius: 50%;
+}
+
+.earth::before, .moon::before {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+
+.earth::before {
+	border: 1px solid blue;
+	top: 2.8em;
+	right: 2.8em;
+	width: 3em;
+	height: 3em;
+	background-color: aqua;
+}
+
+.moon::before {
+	border: 2px dotted gray;
+	top: 0.8em;
+	right: 0.2em;
+	width: 1.2em;
+	height: 1.2em;
+	background-color: silver;
+}
+
+@keyframes orbit {
+	to {
+		border: 5px solid gray transperent transperent;
+		transform: rotate(
+			360deg);
+	}
+}
+
+@keyframes caboom {
+	to {
+		transform: rotate(360deg);
+	}
+}
