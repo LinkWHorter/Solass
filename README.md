@@ -1,1 +1,1 @@
-"# Solass" 
+# Solass
